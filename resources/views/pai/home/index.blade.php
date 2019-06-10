@@ -12,7 +12,11 @@
                 <div href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
                     <div class="weui-media-box__bd">
                         <div class="avatar">
-                            <img class="weui-media-box__thumb" src="{{$photo->user->avatar}}">
+                            @if($photo->is_anonymous == \App\Models\Enum\PhotoEnum::ANONYMOUS_TRUE)
+                                <img class="weui-media-box__thumb" src="/images/anonymous.png">
+                                @else
+                                <img class="weui-media-box__thumb" src="{{$photo->user->avatar}}">
+                            @endif
                         </div>
                         <div class="title_div">
                             <p>
