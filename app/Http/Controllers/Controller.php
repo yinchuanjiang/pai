@@ -16,10 +16,10 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $signPackage = $this->getSignPackage();
-        view()->composer('layout.main',function ($view) use ($signPackage){
-            $view->with('signPackage',$signPackage);
-        });
+//        $signPackage = $this->getSignPackage();
+//        view()->composer('layout.main',function ($view) use ($signPackage){
+//            $view->with('signPackage',$signPackage);
+//        });
         Auth::guard('web')->loginUsingId(2);
     }
 
