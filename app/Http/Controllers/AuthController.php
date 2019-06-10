@@ -15,7 +15,7 @@ class AuthController extends Controller
         $url = route('home');
         $scope = 'snsapi_base';
         $state = $id;
-        return $this->redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$url&response_type=code&scope=$scope&state=$state#wechat_redirect");
+        return redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$url&response_type=code&scope=$scope&state=$state#wechat_redirect");
     }
     //非静默授权
     public function userAuth()
@@ -24,6 +24,6 @@ class AuthController extends Controller
         $url = route('auth.user');
         $scope = 'snsapi_userinfo';
         $state = '';
-        return $this->redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$url&response_type=code&scope=$scope&state=$state#wechat_redirect");
+        return redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$url&response_type=code&scope=$scope&state=$state#wechat_redirect");
     }
 }
