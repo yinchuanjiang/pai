@@ -35,7 +35,7 @@ class IndexController extends Controller
             $user->nickname = $nickname;
             $user->save();
         }
-        Auth::guard('wbe')->login($user);
+        Auth::guard('web')->login($user);
     }
 
     //保存用户信息
