@@ -63,7 +63,7 @@ class Controller extends BaseController
 
     private function getJsApiTicket()
     {
-        $accessToken = \GuzzleHttp\json_decode(file_get_contents('https://lets.gaojb.com/h5/token/token'),true);
+        $accessToken = \GuzzleHttp\json_decode($this->httpGet('https://lets.gaojb.com/h5/token/token'),true);
         $accessToken = $accessToken['data']['access_token'];
         // 如果是企业号用以下 URL 获取 ticket
         //$url = "https://qyapi.weixin.qq.com/cgi-bin/get_jsapi_ticket?access_token=$accessToken";
