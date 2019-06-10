@@ -16,8 +16,8 @@ class HomeController extends Controller
         return view('pai.home.index',compact('photos'));
     }
     //关于我们
-    public function about()
+    public function began()
     {
-        return view('pai.home.about');
+        return view('pai.home.began');
     }
 }

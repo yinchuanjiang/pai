@@ -14,6 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'wx_appid' => env('WX_APP_ID', 'wxac93997bb1f50b77'),
+    'wx_secret' => env('WX_SECRET','aaaaaa'),
 
     /*
     |--------------------------------------------------------------------------

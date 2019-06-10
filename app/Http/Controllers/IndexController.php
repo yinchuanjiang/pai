@@ -8,14 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
-    protected $appid = 'wxac93997bb1f50b77';
-    protected $secret = '7dc017eedadeb7d841ebb9b1192d4aea';
 
     //h5活动首页
     public function index()
     {
-        $appid = $this->appid;
-        $secret = $this->secret;
+        $appid = config('app.wx_appid');
+        $secret = config('app.wx_secret');
         $code = request('code');
         $data = json_decode(file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code"), true);
         if (!isset($data['openid']))
@@ -41,8 +39,8 @@ class IndexController extends Controller
     //保存用户信息
     public function authUser()
     {
-        $appid = $this->appid;
-        $secret = $this->secret;
+        $appid = config('app.wx_appid');
+        $secret = config('app.wx_secret');
         $code = request('code');
         $data = json_decode(file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code"), true);
         if (!isset($data['openid']) || !isset($data['access_token']))
@@ -53,6 +51,6 @@ class IndexController extends Controller
         if (!isset($info['openid']) || !isset($info['headimgurl']) || !isset($info['nickname']))
             abort(404);
         $this->saveUser($openid, $info['headimgurl'], $info['nickname']);
-        return redirect(route('home'));
+        return redirect(route('began'));
     }
 }

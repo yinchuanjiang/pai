@@ -9,7 +9,7 @@
         @endif
         <div class="weui-panel__bd">
             @foreach($photos as $photo)
-                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                <div href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
                     <div class="weui-media-box__bd">
                         <div class="avatar">
                             <img class="weui-media-box__thumb" src="{{$photo->user->avatar}}">
@@ -30,7 +30,7 @@
                         </div>
                         <p class="tips">{{$photo->content}}</p>
                     </div>
-                </a>
+                </div>
             @endforeach
             <div class="pages">
                 {{$photos->links()}}

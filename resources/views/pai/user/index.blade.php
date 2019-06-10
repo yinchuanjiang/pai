@@ -26,7 +26,7 @@
             <div class="weui-cell__bd">
                 <p>联系我们</p>
             </div>
-            <div class="weui-cell__ft"><a href="tel:400-0000-688"><i class="fa fa-phone fa-1x"></i> 4008988288282</a></div>
+            <div class="weui-cell__ft"><a href="tel:{{\App\Models\Enum\ConfigEnum::getValue('COMPANY_TEL')}}"><i class="fa fa-phone fa-1x"></i>{{\App\Models\Enum\ConfigEnum::getValue('COMPANY_TEL')}}</a></div>
         </div>
     </div>
 @endsection

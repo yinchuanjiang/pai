@@ -33,7 +33,7 @@ Route::get('/auth/user', 'IndexController@authUser')->name('auth.user');
 
 Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/about', 'HomeController@about');
+    Route::get('/began', 'HomeController@began')->name('began');
     Route::get('/contact', 'HomeController@contact');
     Route::get('/photo', 'PhotoController@index');
     Route::get('/user', 'UserController@index');
