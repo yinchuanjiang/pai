@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+            <state relative-caret-position="518">
+              <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding>
                 <element signature="e#41#61#0#PHP" expanded="true" />
               </folding>
@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="65" column="88" lean-forward="true" selection-start-line="65" selection-start-column="88" selection-end-line="65" selection-end-column="88" />
+            <state relative-caret-position="391">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="21" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -195,8 +195,8 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
       </list>
     </option>
   </component>
@@ -258,7 +258,69 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pai" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pai" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pai" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pai" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,12 +526,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559875684018</updated>
-      <workItem from="1559875686139" duration="72110000" />
+      <workItem from="1559875686139" duration="72277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72110000" />
+    <option name="totallyTimeSpent" value="72277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1172" extended-state="6" />
@@ -894,14 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="65" column="88" lean-forward="true" selection-start-line="65" selection-start-column="88" selection-end-line="65" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -938,11 +992,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        <state relative-caret-position="518">
+          <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
           <folding>
             <element signature="e#41#61#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="21" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
