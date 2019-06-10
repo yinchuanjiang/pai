@@ -36,7 +36,7 @@
                 {{$photos->links()}}
             </div>
         </div>
-        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
+        <div class="br" style="position: relative;width: 100%;height: 83px;float: left"></div>
     </div>
     <style>
         .avatar {

@@ -13,7 +13,7 @@
     <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
     <script>
         wx.config({
-            debug: true,
+            debug: false,
             appId: "{{$signPackage['appid']}}", // 必填，公众号的唯一标识
             timestamp: "{{$signPackage['timestamp']}}", // 必填，生成签名的时间戳
             nonceStr: "{{$signPackage['noncestr']}}", // 必填，生成签名的随机串
