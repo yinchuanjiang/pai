@@ -58,6 +58,7 @@
             </div>
         </div>
         <button class="weui-btn" style="width: 60%;background-color: #00cc99;color: white">提交</button>
+        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
     </div>
 @endsection
 <style>

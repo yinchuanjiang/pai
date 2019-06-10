@@ -12,7 +12,7 @@ class HomeController extends Controller
     //首页
     public function index()
     {
-        $photos = Photo::where('status',PhotoEnum::CHECKED_PASS)->with(['user','category','images'])->paginate(10);
+        $photos = Photo::where('status',PhotoEnum::CHECKED_PASS)->with(['user','category','images'])->paginate(1);
         return view('pai.home.index',compact('photos'));
     }
     //关于我们

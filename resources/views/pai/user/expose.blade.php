@@ -49,6 +49,7 @@
                         <div class="pages">
                             {{$alls->links()}}
                         </div>
+                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
                     </div>
                 </div>
             </div>
@@ -87,6 +88,7 @@
                         <div class="pages">
                             {{$passes->links()}}
                         </div>
+                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
                     </div>
                 </div>
             </div>
@@ -126,6 +128,7 @@
                         <div class="pages">
                             {{$refuses->links()}}
                         </div>
+                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
                     </div>
                 </div>
             </div>
