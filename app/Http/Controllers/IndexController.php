@@ -43,7 +43,6 @@ class IndexController extends Controller
         $secret = config('app.wx_secret');
         $code = request('code');
         $data = json_decode(file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code"), true);
-        dd($data);
         if (!isset($data['openid']) || !isset($data['access_token']))
             abort(404);
         $openid = $data['openid'];
@@ -52,7 +51,6 @@ class IndexController extends Controller
         if (!isset($info['openid']) || !isset($info['headimgurl']) || !isset($info['nickname']))
             abort(404);
         $this->saveUser($openid, $info['headimgurl'], $info['nickname']);
-        dd(route('began'));
         return redirect(route('began'));
     }
 }
