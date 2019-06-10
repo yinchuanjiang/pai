@@ -101,14 +101,22 @@
             margin-bottom: 53px;
         }
         .pages{
-            margin-left: 20%;
+            margin: 0 auto;
             width: 90%;
+            height: 35px;
+        }
+        .pages .pagination{
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            height: 35px;
         }
         .pages .pagination li{
             text-align: center;
             list-style: none;
-            float: left;
+            display: inline;
             padding: 5px;
+            line-height: 100%;
         }
         .content .pages .pagination{
             width: 100%;
