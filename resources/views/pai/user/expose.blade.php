@@ -20,7 +20,7 @@
                         <span class="weui-loadmore__tips">暂无数据</span>
                     </div>
                 @endif
-                <div class="weui-panel weui-panel_access">
+                <div class="weui-panel weui-panel_access" @if(!$alls->count()) style="border: none" @endif>
                     <div class="weui-panel__bd">
                         @foreach($alls as $all)
                             <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
@@ -49,7 +49,7 @@
                         <div class="pages">
                             {{$alls->links()}}
                         </div>
-                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
+                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left;border: none"></div>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                         <span class="weui-loadmore__tips">暂无数据</span>
                     </div>
                 @endif
-                <div class="weui-panel weui-panel_access">
+                <div class="weui-panel weui-panel_access" @if(!$passes->count()) style="display: none" @endif>
                     <div class="weui-panel__bd">
                         @foreach($passes as $pass)
                             <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
@@ -88,7 +88,7 @@
                         <div class="pages">
                             {{$passes->links()}}
                         </div>
-                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
+                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left;border: none"></div>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                         <span class="weui-loadmore__tips">暂无数据</span>
                     </div>
                 @endif
-                <div class="weui-panel weui-panel_access">
+                <div class="weui-panel weui-panel_access" @if(!$refuses->count()) style="display: none" @endif>
                     <div class="weui-panel__bd">
                         @foreach($refuses as $refus)
                             <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
@@ -128,7 +128,7 @@
                         <div class="pages">
                             {{$refuses->links()}}
                         </div>
-                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left"></div>
+                        <div class="br" style="position: relative;width: 100%;height: 53px;float: left;border: none"></div>
                     </div>
                 </div>
             </div>
