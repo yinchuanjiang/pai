@@ -25,7 +25,7 @@
                         </div>
                         <div class="photo-lists">
                             @foreach($photo->images as $image)
-                                <img src="{{$image->image_url}}" alt="" style="margin-top: 5px">
+                                <img onclick="show({{$image->image_url}})" src="{{$image->image_url}}" alt="" style="margin-top: 5px">
                             @endforeach
                         </div>
                         <p class="tips">{{$photo->content}}</p>
@@ -45,7 +45,6 @@
             border-radius: 100%;
             overflow: hidden;
         }
-
         .tips {
             color: #9A9A9A;
             font-size: 12px;
@@ -54,20 +53,16 @@
             font-weight: 400;
             padding-left: 10px;
         }
-
         .avatar img {
             width: 100%;
         }
-
         .title_div {
             width: 80%;
             float: left;
         }
-
         .title_div p {
             margin-left: 1rem;
         }
-
         .demos-title {
             background-color: #00cc99;
             margin: 0 auto;
@@ -76,22 +71,18 @@
             text-align: center;
             color: white;
         }
-
         .photo-lists {
             width: 80%;
             margin-top: 10px;
             float: left;
         }
-
         .photo-lists img {
             width: 100%;
         }
-
         .title_anonymous {
             font-weight: 700;
             color: #696969;
         }
-
         .title_status {
             font-size: 10px;
             color: red;
@@ -101,7 +92,6 @@
             color: #696969;
             font-weight: 400;
         }
-
         .title_time {
             color: #696969;
             font-size: 10px;
@@ -110,4 +100,15 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <script>
+        function show(photo){
+            console.log(photo)
+            wx.ready(function() {
+                wx.previewImage({
+                    current: photo, // 当前显示图片的http链接
+                    urls: [photo] // 需要预览的图片http链接列表
+                });
+            })
+        },
+    </script>
 @endsection
