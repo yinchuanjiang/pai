@@ -21,7 +21,7 @@
                                 <span class="title_status">已审核</span>
                                 <span class="title_cate">{{$photo->category->cate_name}}</span>
                             </p>
-                            <p class="title_time">曝光时间:2019/5/16 11:21:59</p>
+                            <p class="title_time">曝光时间:{{$photo->created_at}}</p>
                         </div>
                         <div class="photo-lists">
                             @foreach($photo->images as $image)

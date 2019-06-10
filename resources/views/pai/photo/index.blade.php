@@ -164,12 +164,12 @@
                         buttons: [
                             {
                                 text: "继续曝光", onClick: function () {
-                                console.log(1)
+                                    window.location.href = '/photo'
                             }
                             },
                             {
                                 text: "我的曝光", onClick: function () {
-                                console.log(2)
+                                window.location.href = '/user/expose'
                             }
                             },
                         ]
