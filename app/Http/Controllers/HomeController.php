@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Enum\PhotoEnum;
 use App\Models\Photo;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
