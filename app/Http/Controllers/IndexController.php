@@ -51,6 +51,7 @@ class IndexController extends Controller
         if (!isset($info['openid']) || !isset($info['headimgurl']) || !isset($info['nickname']))
             abort(404);
         $this->saveUser($openid, $info['headimgurl'], $info['nickname']);
+        dd(route('began'));
         return redirect(route('began'));
     }
 }
