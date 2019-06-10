@@ -52,7 +52,7 @@ class Controller extends BaseController
             "noncestr" => $nonceStr,
             "timestamp" => $timestamp,
             "url" => "$protocol$_SERVER[HTTP_HOST]"."/auth",
-            'img_url' => "$protocol$_SERVER[HTTP_HOST]"."/static/share.jpg",
+            'img_url' => "$protocol$_SERVER[HTTP_HOST]"."/images/logo1.png",
             "signature" => $signature,
             "rawString" => $string,
             "title" => '文明六安',
