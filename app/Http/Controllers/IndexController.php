@@ -22,7 +22,7 @@ class IndexController extends Controller
             abort(404);
         $openid = $data['openid'];
         $this->saveUser($openid);
-        return $this->redirect(route('home'));
+        return redirect(route('home'));
     }
 
     private function saveUser($openid, $avatar = null, $nickname = null)
@@ -51,7 +51,7 @@ class IndexController extends Controller
     {
         $appid = $this->appid;
         $secret = $this->secret;
-        $code = input('code');
+        $code = request('code');
         $data = json_decode(file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code"), true);
         if (!isset($data['openid']) || !isset($data['access_token']))
             abort(404);
@@ -61,6 +61,6 @@ class IndexController extends Controller
         if (!isset($info['openid']) || !isset($info['headimgurl']) || !isset($info['nickname']))
             abort(404);
         $this->saveUser($openid, $info['headimgurl'], $info['nickname']);
-        return $this->redirect(route('home'));
+        return redirect(route('home'));
     }
 }
