@@ -33,14 +33,12 @@ class IndexController extends Controller
             $user->save(
                 [
                     'openid' => $openid,
-                    'created_at' => date('Y-m-d H:i:s')
                 ]
             );
         }
         if ($avatar && $nickname) {
             $user->avatar = $avatar;
             $user->nickname = $nickname;
-            $user->updated_at = date('Y-m-d H:i:s');
             $user->save();
         }
         Auth::guard('wbe')->login($user);
@@ -53,6 +51,7 @@ class IndexController extends Controller
         $secret = $this->secret;
         $code = request('code');
         $data = json_decode(file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code"), true);
+        dd($data);
         if (!isset($data['openid']) || !isset($data['access_token']))
             abort(404);
         $openid = $data['openid'];
