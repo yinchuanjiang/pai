@@ -30,7 +30,7 @@ class SubmitRequest extends FormRequest
                 return [
                     'files' => 'required',
                     'files.*' => 'required|file|mimes:jpeg,gif,png,mpga',
-                    'wp_pai_category_id' => 'required',
+                    'category_id' => 'required',
                     'is_anonymous' => 'required|in:1,-1',
                     'mobile' => 'required|max:11|min:11',
                     'content' => 'required|max:1000'

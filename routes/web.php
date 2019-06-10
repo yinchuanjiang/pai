@@ -30,10 +30,14 @@ if (! function_exists('show')) {
 
 Route::get('/auth', 'AuthController@userAuth')->name('login');
 Route::get('/auth/user', 'IndexController@authUser')->name('auth.user');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/about', 'HomeController@about');
-Route::get('/contact', 'HomeController@contact');
-Route::get('/photo', 'PhotoController@index');
-Route::get('/user', 'UserController@index');
-Route::get('/user/expose', 'UserController@exposes');
-Route::post('/submit', 'SubmitController@index');
+
+Route::group(['middleware' => 'auth:web'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/about', 'HomeController@about');
+    Route::get('/contact', 'HomeController@contact');
+    Route::get('/photo', 'PhotoController@index');
+    Route::get('/user', 'UserController@index');
+    Route::get('/user/expose', 'UserController@exposes');
+    Route::get('/user/about', 'UserController@about');
+    Route::post('/submit', 'SubmitController@index');
+});

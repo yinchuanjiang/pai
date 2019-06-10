@@ -3,19 +3,19 @@
     <h3 class="demos-title">个人中心</h3>
     <div class="avatar">
         <div class="center">
-            <img src="/images/avatar.jpg" alt="">
+            <img src="{{auth()->user()->avatar}}" alt="">
         </div>
-        <p class="nickname">安小游、</p>
+        <p class="nickname">{{auth()->user()->nickname}}</p>
     </div>
     <div class="weui-cells">
-        <a class="weui-cell weui-cell_access" href="javascript:;">
+        <a class="weui-cell weui-cell_access" href="/user/expose">
             <div class="weui-cell__bd">
                 <p>我的曝光</p>
             </div>
             <div class="weui-cell__ft">
             </div>
         </a>
-        <a class="weui-cell weui-cell_access" href="javascript:;">
+        <a class="weui-cell weui-cell_access" href="/user/about">
             <div class="weui-cell__bd">
                 <p>关于我们</p>
             </div>

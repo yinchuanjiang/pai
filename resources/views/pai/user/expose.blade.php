@@ -15,87 +15,117 @@
         </div>
         <div class="weui-tab__bd" style="height: 80%">
             <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
-                <div class="weui-loadmore weui-loadmore_line">
-                    <span class="weui-loadmore__tips">暂无数据</span>
-                </div>
+                @if(!$alls->count())
+                    <div class="weui-loadmore weui-loadmore_line">
+                        <span class="weui-loadmore__tips">暂无数据</span>
+                    </div>
+                @endif
                 <div class="weui-panel weui-panel_access">
                     <div class="weui-panel__bd">
-                        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                            <div class="weui-media-box__bd">
-                                <div class="avatar">
-                                    <img class="weui-media-box__thumb" src="/images/avatar.jpg">
+                        @foreach($alls as $all)
+                            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__bd">
+                                    <div class="avatar">
+                                        <img class="weui-media-box__thumb" src="{{$all->user->avatar}}">
+                                    </div>
+                                    <div class="title_div">
+                                        <p>
+                                            <span class="title_anonymous">@if($all->is_anonymous == \App\Models\Enum\PhotoEnum::ANONYMOUS_TRUE)
+                                                    匿名曝光@else 非匿名曝光 @endif</span> |
+                                            <span class="title_status">{{\App\Models\Enum\PhotoEnum::getStatusName($all->status)}}</span>
+                                            <span class="title_cate">{{$all->category->cate_name}}</span>
+                                        </p>
+                                        <p class="title_time">提交时间:{{$all->created_at}}</p>
+                                    </div>
+                                    <div class="photo-lists">
+                                        @foreach($all->images as $image)
+                                            <img src="{{$image->image_url}}" alt="" style="margin-top: 5px">
+                                        @endforeach
+                                    </div>
+                                    <p class="tips">{{$all->content}}</p>
                                 </div>
-                                <div class="title_div">
-                                    <p>
-                                        <span class="title_anonymous">匿名曝光</span> |
-                                        <span class="title_status">已审核</span>
-                                        <span class="title_cate">乱摆摊点</span>
-                                    </p>
-                                    <p class="title_time">曝光时间:2019/5/16 11:21:59</p>
-                                </div>
-                                <div class="photo-lists">
-                                    <img src="/images/swiper-1.jpg" alt="">
-                                    <img src="/images/swiper-2.jpg" alt="">
-                                    <img src="/images/swiper-3.jpg" alt="">
-                                </div>
-                                <p class="tips">文盛街文盛街与东大街交口向南路西侧有无照经营游商(卖鱼虾的)(黑毛猪专卖门前)</p>
-                            </div>
-                        </a>
+                            </a>
+                        @endforeach
+                        <div class="pages">
+                            {{$alls->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="tab2" class="weui-tab__bd-item">
+                @if(!$passes->count())
+                    <div class="weui-loadmore weui-loadmore_line">
+                        <span class="weui-loadmore__tips">暂无数据</span>
+                    </div>
+                @endif
                 <div class="weui-panel weui-panel_access">
                     <div class="weui-panel__bd">
-                        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                            <div class="weui-media-box__bd">
-                                <div class="avatar">
-                                    <img class="weui-media-box__thumb" src="/images/avatar.jpg">
+                        @foreach($passes as $pass)
+                            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__bd">
+                                    <div class="avatar">
+                                        <img class="weui-media-box__thumb" src="{{$pass->user->avatar}}">
+                                    </div>
+                                    <div class="title_div">
+                                        <p>
+                                            <span class="title_anonymous">@if($pass->is_anonymous == \App\Models\Enum\PhotoEnum::ANONYMOUS_TRUE)
+                                                    匿名曝光@else 非匿名曝光 @endif</span> |
+                                            <span class="title_status">{{\App\Models\Enum\PhotoEnum::getStatusName($pass->status)}}</span>
+                                            <span class="title_cate">{{$pass->category->cate_name}}</span>
+                                        </p>
+                                        <p class="title_time">提交时间:{{$pass->created_at}}</p>
+                                    </div>
+                                    <div class="photo-lists">
+                                        @foreach($pass->images as $image)
+                                            <img src="{{$image->image_url}}" alt="" style="margin-top: 5px">
+                                        @endforeach
+                                    </div>
+                                    <p class="tips">{{$pass->content}}</p>
                                 </div>
-                                <div class="title_div">
-                                    <p>
-                                        <span class="title_anonymous">匿名曝光</span> |
-                                        <span class="title_status">等待审核</span>
-                                        <span class="title_cate">乱摆摊点</span>
-                                    </p>
-                                    <p class="title_time">曝光时间:2019/5/16 11:21:59</p>
-                                </div>
-                                <div class="photo-lists">
-                                    <img src="/images/swiper-1.jpg" alt="">
-                                    <img src="/images/swiper-2.jpg" alt="">
-                                    <img src="/images/swiper-3.jpg" alt="">
-                                </div>
-                                <p class="tips">文盛街文盛街与东大街交口向南路西侧有无照经营游商(卖鱼虾的)(黑毛猪专卖门前)</p>
-                            </div>
-                        </a>
+                            </a>
+                        @endforeach
+                        <div class="pages">
+                            {{$passes->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="tab3" class="weui-tab__bd-item">
+                @if(!$refuses->count())
+                    <div class="weui-loadmore weui-loadmore_line">
+                        <span class="weui-loadmore__tips">暂无数据</span>
+                    </div>
+                @endif
                 <div class="weui-panel weui-panel_access">
                     <div class="weui-panel__bd">
-                        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                            <div class="weui-media-box__bd">
-                                <div class="avatar">
-                                    <img class="weui-media-box__thumb" src="/images/avatar.jpg">
+                        @foreach($refuses as $refus)
+                            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__bd">
+                                    <div class="avatar">
+                                        <img class="weui-media-box__thumb" src="{{$refus->user->avatar}}">
+                                    </div>
+                                    <div class="title_div">
+                                        <p>
+                                            <span class="title_anonymous">@if($refus->is_anonymous == \App\Models\Enum\PhotoEnum::ANONYMOUS_TRUE)
+                                                    匿名曝光@else 非匿名曝光 @endif</span> |
+                                            <span class="title_status">{{\App\Models\Enum\PhotoEnum::getStatusName($refus->status)}}</span>
+                                            <span class="title_cate">{{$refus->category->cate_name}}</span>
+                                        </p>
+                                        <p class="title_time">提交时间:{{$refus->created_at}}</p>
+                                    </div>
+                                    <div class="photo-lists">
+                                        @foreach($refus->images as $image)
+                                            <img src="{{$image->image_url}}" alt="" style="margin-top: 5px">
+                                        @endforeach
+                                    </div>
+                                    <p class="tips">{{$refus->content}}</p>
+                                    <p class="remark">备注：{{$refus->remark}}</p>
                                 </div>
-                                <div class="title_div">
-                                    <p>
-                                        <span class="title_anonymous">匿名曝光</span> |
-                                        <span class="title_status">审核不通过</span>
-                                        <span class="title_cate">乱摆摊点</span>
-                                    </p>
-                                    <p class="title_time">曝光时间:2019/5/16 11:21:59</p>
-                                </div>
-                                <div class="photo-lists">
-                                    <img src="/images/swiper-1.jpg" alt="">
-                                    <img src="/images/swiper-2.jpg" alt="">
-                                    <img src="/images/swiper-3.jpg" alt="">
-                                </div>
-                                <p class="tips">文盛街文盛街与东大街交口向南路西侧有无照经营游商(卖鱼虾的)(黑毛猪专卖门前)</p>
-                                <p class="remark">备注：图片不符合要求</p>
-                            </div>
-                        </a>
+                            </a>
+                        @endforeach
+                        <div class="pages">
+                            {{$refuses->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,20 +141,24 @@
         text-align: center;
         color: white;
     }
+
     .avatar {
         width: 20%;
         float: left;
         border-radius: 100%;
         overflow: hidden;
     }
-    .tips{
+
+    .tips {
         color: #9A9A9A;
         font-size: 12px;
         text-align: left;
         float: left;
         font-weight: 400;
         padding-left: 10px;
+        width: 100%;
     }
+
     .avatar img {
         width: 100%;
     }
@@ -176,7 +210,8 @@
         color: #696969;
         font-size: 10px;
     }
-    .remark{
+
+    .remark {
         float: left;
         font-size: 12px;
         font-weight: 400;

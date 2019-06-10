@@ -19,13 +19,13 @@
                                 <span class="title_anonymous">@if($photo->is_anonymous == \App\Models\Enum\PhotoEnum::ANONYMOUS_TRUE)
                                         匿名曝光@else 非匿名曝光 @endif</span> |
                                 <span class="title_status">已审核</span>
-                                <span class="title_cate">{{$photo->cagtegory->cate_name}}</span>
+                                <span class="title_cate">{{$photo->category->cate_name}}</span>
                             </p>
                             <p class="title_time">曝光时间:2019/5/16 11:21:59</p>
                         </div>
                         <div class="photo-lists">
                             @foreach($photo->images as $image)
-                                <img src="{{$image->image_url}}" alt="">
+                                <img src="{{$image->image_url}}" alt="" style="margin-top: 5px">
                             @endforeach
                         </div>
                         <p class="tips">{{$photo->content}}</p>

@@ -88,7 +88,12 @@ class PhotoController extends Controller
         $grid->user()->mobile('手机号');
         $grid->category()->cate_name('曝光分类');
         $grid->column('曝光图片')->modal('曝光图片', function ($model) {
-            return '<div class="images" style="width: 80%;margin: 0 auto"><img src="/images/swiper-1.jpg" style="width: 100%"><img src="/images/swiper-2.jpg" style="width: 100%"><img src="/images/swiper-3.jpg" style="width: 100%"></div>';
+            $div = '<div class="images" style="width: 80%;margin: 5px auto">';
+            foreach ($model->images as $image){
+                $div .= '<img src="'.$image->image_url.'" style="width: 100%">';
+            }
+            $div .= '</div>';
+            return $div;
         });
         $grid->status('状态')->display(function ($status){
             if($status == PhotoEnum::CHECKING) {

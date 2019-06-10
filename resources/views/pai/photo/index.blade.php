@@ -6,7 +6,8 @@
             <div class="weui-cell__bd">
                 <div class="weui-uploader">
                     <div class="weui-uploader__hd">
-                        <p class="weui-uploader__title">图片上传</p>
+                        <p class="weui-uploader__title" style="color: #00cc99;font-size: 12px;font-weight: 400">
+                            *图片上传</p>
                         <div class="weui-uploader__info">0/10</div>
                     </div>
                     <div class="weui-uploader__bd">
@@ -23,48 +24,49 @@
         </div>
         <div class="weui-cell weui-cell_select weui-cell_select-after">
             <div class="weui-cell__hd">
-                <label for="" class="weui-label">曝光类别</label>
+                <label for="" class="weui-label" style="color: #00cc99;font-size: 12px;font-weight: 400">*曝光类别</label>
             </div>
             <div class="weui-cell__bd">
-                <select class="weui-select" name="select2">
+                <select class="weui-select" name="select2" style="color: red;font-size: 12px;font-weight: 400">
                     <option value="" checked>请选择类别</option>
-                    <option value="1">乱摆摊点</option>
-                    <option value="2">乱停车辆</option>
-                    <option value="3">乱穿马路</option>
-                    <option value="4">乱扔垃圾</option>
-                    <option value="5">乱贴乱画</option>
-                    <option value="6">乱搭乱建</option>
-                    <option value="7">乱堆乱放</option>
-                    <option value="8">乱拉乱晒</option>
-                    <option value="9">乱种乱养</option>
-                    <option value="10">其他</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->cate_name}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="weui-cells weui-cells_form">
             <div class="weui-cell">
                 <div class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="请输入情况描述" rows="4"></textarea>
+                    <textarea class="weui-textarea" placeholder="*请输入情况描述" rows="4"></textarea>
                     <div class="weui-textarea-counter"><span class="text-num">0</span>/1000</div>
                 </div>
             </div>
             <div class="weui-cell weui-cell_switch">
-                <div class="weui-cell__bd">匿名提交</div>
+                <div class="weui-cell__bd" style="color: #00cc99;font-size: 12px;font-weight: 400">匿名提交</div>
                 <div class="weui-cell__ft">
                     <input class="weui-switch" type="checkbox">
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label for="" class="weui-label">手机号</label></div>
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label" style="color: #00cc99;font-size: 12px;font-weight: 400">*手机号</label>
+                </div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="tel" name="mobile" pattern="[0-9]*" value="" placeholder="请输入手机号">
                 </div>
             </div>
         </div>
-        <button class="weui-btn" style="width: 60%;background-color: #00cc99;color: white">按钮</button>
+        <button class="weui-btn" style="width: 60%;background-color: #00cc99;color: white">提交</button>
     </div>
 @endsection
 <style>
+    textarea::-webkit-input-placeholder {
+        color: #00cc99;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
     .tips {
         color: #9A9A9A;
         font-size: 12px;
@@ -145,30 +147,38 @@
             var category = $('.weui-select').val();
             var mobile = $('input[name="mobile"]').val();
             var formdata = new FormData();
-            for (var i = 0; i < img.length; i++){
+            for (var i = 0; i < img.length; i++) {
                 formdata.append('files[]', img[i]);
             }
             formdata.append('is_anonymous', is_anonymous);
             formdata.append('content', content);
-            formdata.append('wp_pai_category_id', category);
+            formdata.append('category_id', category);
             formdata.append('mobile', mobile);
             axios.post('/submit', formdata).then(res => {
                 $.hideLoading();
-                if(res.data.statu == 200){
+                if (res.data.status == 200) {
                     $.modal({
                         title: "提示",
                         text: "曝光成功",
                         buttons: [
-                            { text: "继续曝光", onClick: function(){ console.log(1)} },
-                            { text: "我的曝光", onClick: function(){ console.log(2)} },
+                            {
+                                text: "继续曝光", onClick: function () {
+                                console.log(1)
+                            }
+                            },
+                            {
+                                text: "我的曝光", onClick: function () {
+                                console.log(2)
+                            }
+                            },
                         ]
                     });
-                }else {
+                } else {
                     $.toast(res.data.msg, "forbidden");
                 }
             }).catch(error => {
                 $.hideLoading();
-                $.each(error.response.data.errors, function(idx, obj) {
+                $.each(error.response.data.errors, function (idx, obj) {
                     $.toast(obj[0], "forbidden");
                     return false;
                 });

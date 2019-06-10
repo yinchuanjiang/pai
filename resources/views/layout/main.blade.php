@@ -64,6 +64,23 @@
         .weui-panel_access {
             margin-bottom: 53px;
         }
+        .pages{
+            margin-left: 20%;
+            width: 90%;
+        }
+        .pages .pagination li{
+            text-align: center;
+            list-style: none;
+            float: left;
+            padding: 5px;
+        }
+        .content .pages .pagination{
+            width: 100%;
+            margin: 0 auto;
+        }
+        .pages .pagination li.active{
+            color: red;
+        }
     </style>
 </head>
 <body>
