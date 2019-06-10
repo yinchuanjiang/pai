@@ -28,7 +28,9 @@ if (! function_exists('show')) {
     }
 }
 
-Route::get('/home', 'HomeController@index');
+Route::get('/auth', 'AuthController@userAuth')->name('login');
+Route::get('/auth/user', 'IndexController@authUser')->name('auth.user');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/photo', 'PhotoController@index');

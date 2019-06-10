@@ -2,28 +2,36 @@
 @section("content")
     <h3 class="demos-title">曝光社区</h3>
     <div class="weui-panel weui-panel_access">
+        @if(!$photos->count())
+            <div class="weui-loadmore weui-loadmore_line">
+                <span class="weui-loadmore__tips">暂无数据</span>
+            </div>
+        @endif
         <div class="weui-panel__bd">
-            <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-                <div class="weui-media-box__bd">
-                    <div class="avatar">
-                        <img class="weui-media-box__thumb" src="./images/avatar.jpg">
+            @foreach($photos as $photo)
+                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__bd">
+                        <div class="avatar">
+                            <img class="weui-media-box__thumb" src="{{$photo->user->avatar}}">
+                        </div>
+                        <div class="title_div">
+                            <p>
+                                <span class="title_anonymous">@if($photo->is_anonymous == \App\Models\Enum\PhotoEnum::ANONYMOUS_TRUE)
+                                        匿名曝光@else 非匿名曝光 @endif</span> |
+                                <span class="title_status">已审核</span>
+                                <span class="title_cate">{{$photo->cagtegory->cate_name}}</span>
+                            </p>
+                            <p class="title_time">曝光时间:2019/5/16 11:21:59</p>
+                        </div>
+                        <div class="photo-lists">
+                            @foreach($photo->images as $image)
+                                <img src="{{$image->image_url}}" alt="">
+                            @endforeach
+                        </div>
+                        <p class="tips">{{$photo->content}}</p>
                     </div>
-                    <div class="title_div">
-                        <p>
-                            <span class="title_anonymous">匿名曝光</span> |
-                            <span class="title_status">已审核</span>
-                            <span class="title_cate">乱摆摊点</span>
-                        </p>
-                        <p class="title_time">曝光时间:2019/5/16 11:21:59</p>
-                    </div>
-                    <div class="photo-lists">
-                        <img src="./images/swiper-1.jpg" alt="">
-                        <img src="./images/swiper-2.jpg" alt="">
-                        <img src="./images/swiper-3.jpg" alt="">
-                    </div>
-                    <p class="tips">文盛街文盛街与东大街交口向南路西侧有无照经营游商(卖鱼虾的)(黑毛猪专卖门前)</p>
-                </div>
-            </a>
+                </a>
+            @endforeach
         </div>
     </div>
     <style>
@@ -33,7 +41,8 @@
             border-radius: 100%;
             overflow: hidden;
         }
-        .tips{
+
+        .tips {
             color: #9A9A9A;
             font-size: 12px;
             text-align: left;
@@ -41,6 +50,7 @@
             font-weight: 400;
             padding-left: 10px;
         }
+
         .avatar img {
             width: 100%;
         }
