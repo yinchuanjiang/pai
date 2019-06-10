@@ -25,18 +25,12 @@ class IndexController extends Controller
         return redirect(route('home'));
     }
 
-    private function saveUser($openid, $avatar = null, $nickname = null)
+    private function saveUser($openid, $avatar, $nickname)
     {
         $user = User::where('openid', $openid)->first();
         if (!$user) {
             $user = new User();
-            $user->save(
-                [
-                    'openid' => $openid,
-                ]
-            );
-        }
-        if ($avatar && $nickname) {
+            $user->openid = $openid;
             $user->avatar = $avatar;
             $user->nickname = $nickname;
             $user->save();
@@ -51,7 +45,6 @@ class IndexController extends Controller
         $secret = $this->secret;
         $code = request('code');
         $data = json_decode(file_get_contents("https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code"), true);
-        dd($data);
         if (!isset($data['openid']) || !isset($data['access_token']))
             abort(404);
         $openid = $data['openid'];
