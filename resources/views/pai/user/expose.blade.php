@@ -20,7 +20,7 @@
                         <span class="weui-loadmore__tips">暂无数据</span>
                     </div>
                 @endif
-                <div class="weui-panel weui-panel_access" @if(!$alls->count()) style="border: none" @endif>
+                <div class="weui-panel weui-panel_access" @if(!$alls->count()) style="display: none" @endif>
                     <div class="weui-panel__bd">
                         @foreach($alls as $all)
                             <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
