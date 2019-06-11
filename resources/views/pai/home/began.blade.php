@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=yes"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>拍</title>
+    <title>安全隐患随手拍</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- head 中 -->
@@ -93,14 +93,20 @@
         <img src="/images/top.jpg" alt="" style="width: 100%">
     </div>
     <div>
-        <img src="/images/logo1.png" alt="" style="width: 80px;margin: 0 auto;display: block">
+        <a href="/photo"><img src="/images/logo1.png" alt="" style="width: 80px;margin: 0 auto;display: block"></a>
     </div>
-    <p style="margin: 20px auto;text-align: center">
-        <a href="/home" style="margin-right: 5px;font-size: 16px;color: #1F5695;font-weight: 700">曝光社区</a>
+    <p style="margin: 5px auto;text-align: center">
+        <a href="/home" style="margin-right: 5px;font-size: 16px;color: #1F5695;font-weight: 700">曝光台</a>
         <a href="/photo" style="font-size: 16px;color: #1F5695;font-weight: 700">我要曝光</a>
     </p>
-    <div>
-        <img src="/images/logo1.jpg" alt="" style="width: 100%">
+    <div style="position: relative">
+        <p style="margin-left: 20px;text-align: left;color: red;font-size: 16px;font-weight: 700;position: relative;z-index: 2">
+            主办单位：六安市应急管理局
+        </p>
+        <p style="margin-left: 20px;text-align: left;color: red;font-size: 16px;font-weight: 700;z-index: 2;position: relative">
+            曝光平台：六安市应急管理局发布
+        </p>
+        <img src="/images/logo1.jpg" alt="" style="width: 100%;position: absolute;left: 0;top: 20px;">
     </div>
 </div>
 </body>

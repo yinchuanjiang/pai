@@ -1,6 +1,6 @@
 @extends("layout.main")
 @section("content")
-    <h3 class="demos-title">曝光社区</h3>
+    <h3 class="demos-title">曝光台</h3>
     <div class="weui-panel weui-panel_access">
         @if(!$photos->count())
             <div class="weui-loadmore weui-loadmore_line">
