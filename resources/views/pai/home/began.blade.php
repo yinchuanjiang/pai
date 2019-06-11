@@ -101,10 +101,10 @@
         <a href="/photo" style="font-size: 16px;color: #1F5695;font-weight: 700">我要曝光</a>
     </p>
     <div style="position: relative">
-        <p style="margin-left: 20px;text-align: left;color: red;font-size: 16px;font-weight: 700;position: relative;z-index: 2">
+        <p style="text-align: center;color: red;font-size: 14px;font-weight: 700;position: relative;z-index: 2">
             主办单位：六安市应急管理局
         </p>
-        <p style="margin-left: 20px;text-align: left;color: red;font-size: 16px;font-weight: 700;z-index: 2;position: relative">
+        <p style="text-align: center;color: red;font-size: 14px;font-weight: 700;z-index: 2;position: relative">
             曝光平台：六安市应急管理局发布
         </p>
         <img src="/images/logo1.jpg" alt="" style="width: 100%;position: absolute;left: 0;top: 20px;">

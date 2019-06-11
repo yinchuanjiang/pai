@@ -1,6 +1,6 @@
 @extends("layout.main")
 @section("content")
-    <h3 class="demos-title">我要举报</h3>
+    <h3 class="demos-title">我要曝光</h3>
     <div class="weui-cells weui-cells_form" id="form">
         <div class="weui-cell">
             <div class="weui-cell__bd">
