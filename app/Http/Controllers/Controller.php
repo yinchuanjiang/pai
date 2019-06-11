@@ -12,11 +12,14 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    protected $signPackage;
+
 
 
     public function __construct()
     {
         $signPackage = $this->getSignPackage();
+        $this->signPackage = $signPackage;
         view()->composer('layout.main',function ($view) use ($signPackage){
             $view->with('signPackage',$signPackage);
         });

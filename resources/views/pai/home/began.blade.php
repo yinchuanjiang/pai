@@ -12,8 +12,41 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
     <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
     <script>
-
+        wx.config({
+            debug: false,
+            appId: "{{$signPackage['appid']}}", // 必填，公众号的唯一标识
+            timestamp: "{{$signPackage['timestamp']}}", // 必填，生成签名的时间戳
+            nonceStr: "{{$signPackage['noncestr']}}", // 必填，生成签名的随机串
+            signature: "{{$signPackage['signature']}}", // 必填，签名，见附录1
+            jsApiList: [
+                'previewImage',
+                'hideAllNonBaseMenuItem',
+                'showMenuItems',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'chooseWXPay'
+            ] // 必填，需要使用的 JS 接口列表，所有JS接口列表见附录2
+        })
+        wx.ready(() => {
+            const share_title = "{{$signPackage['title']}}";
+            const share_desc = "{{$signPackage['desc']}}";
+            const share_link = "{{$signPackage['url']}}";
+            const share_img = "{{$signPackage['img_url']}}";
+            wx.showOptionMenu()
+            wx.onMenuShareTimeline({
+                title: share_title, // 分享标题
+                link: share_link, // 分享链接
+                imgUrl: share_img, // 分享图标
+            })
+            wx.onMenuShareAppMessage({
+                title: share_title, // 分享标题
+                desc: share_desc, // 分享描述
+                link: share_link, // 分享链接
+                imgUrl: share_img, // 分享图标
+            })
+        })
     </script>
     <style>
         html, body {
