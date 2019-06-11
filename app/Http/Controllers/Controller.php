@@ -20,7 +20,7 @@ class Controller extends BaseController
         view()->composer('layout.main',function ($view) use ($signPackage){
             $view->with('signPackage',$signPackage);
         });
-        Auth::guard('web')->loginUsingId(2);
+//        Auth::guard('web')->loginUsingId(2);
     }
 
 
@@ -52,11 +52,11 @@ class Controller extends BaseController
             "noncestr" => $nonceStr,
             "timestamp" => $timestamp,
             "url" => "$protocol$_SERVER[HTTP_HOST]"."/auth",
-            'img_url' => "$protocol$_SERVER[HTTP_HOST]"."/images/logo1.png",
+            'img_url' => "$protocol$_SERVER[HTTP_HOST]"."/images/share.png",
             "signature" => $signature,
             "rawString" => $string,
-            "title" => '文明六安',
-            "desc" => '描述文案'
+            "title" => '安全隐患随手拍',
+            "desc" => '防风险 除隐患 遏事故'
         );
         return $signPackage;
     }

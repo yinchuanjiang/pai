@@ -90,17 +90,17 @@
 <body>
 <div class="weui-tab">
     <div>
-        <img src="/images/top.png" alt="" style="width: 100%">
+        <img src="/images/top.jpg" alt="" style="width: 100%">
     </div>
     <div>
         <img src="/images/logo1.png" alt="" style="width: 80px;margin: 0 auto;display: block">
     </div>
     <p style="margin: 20px auto;text-align: center">
-        <a href="/home" style="margin-right: 5px;font-size: 12px;color: #1F5695;font-weight: 400">曝光社区</a>
-        <a href="/photo" style="font-size: 12px;color: #1F5695;font-weight: 400">我要曝光</a>
+        <a href="/home" style="margin-right: 5px;font-size: 16px;color: #1F5695;font-weight: 700">曝光社区</a>
+        <a href="/photo" style="font-size: 16px;color: #1F5695;font-weight: 700">我要曝光</a>
     </p>
     <div>
-        <img src="/images/foot.jpg" alt="" style="width: 100%">
+        <img src="/images/logo1.jpg" alt="" style="width: 100%">
     </div>
 </div>
 </body>

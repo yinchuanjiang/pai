@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Config;
 use App\Models\Enum\ConfigEnum;
-use App\Models\Enum\PhotoEnum;
 use App\Models\Photo;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
