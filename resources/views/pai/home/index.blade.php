@@ -26,6 +26,7 @@
                                 <span class="title_cate">{{$photo->category->cate_name}}</span>
                             </p>
                             <p class="title_time">曝光时间:{{$photo->created_at}}</p>
+                            <p class="title_time">拍摄时间:{{$photo->time}}</p>
                         </div>
                         <div class="photo-lists">
                             @foreach($photo->images as $image)
@@ -33,6 +34,7 @@
                             @endforeach
                         </div>
                         <p class="tips">{{$photo->content}}</p>
+                        <p class="tips" style="color: red">具体位置：{{$photo->position}}</p>
                     </div>
                 </div>
             @endforeach
@@ -56,6 +58,7 @@
             float: left;
             font-weight: 400;
             padding-left: 10px;
+            width: 100%;
         }
         .avatar img {
             width: 100%;

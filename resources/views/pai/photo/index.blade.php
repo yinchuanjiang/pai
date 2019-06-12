@@ -18,7 +18,6 @@
                             <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
                         </div>
                     </div>
-                    <p class="tips">备注：请使用水印相机上传有时间、地点的曝光图片</p>
                 </div>
             </div>
         </div>
@@ -38,8 +37,20 @@
         <div class="weui-cells weui-cells_form">
             <div class="weui-cell">
                 <div class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="*请输入情况描述" rows="4"></textarea>
+                    <textarea class="weui-textarea desc" placeholder="*请输入情况描述" rows="4"></textarea>
                     <div class="weui-textarea-counter"><span class="text-num">0</span>/1000</div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="" class="weui-label" style="color: #00cc99;font-size: 12px;font-weight: 400">*拍摄时间</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" name="time" type="date" value="">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea position" placeholder="*隐患具体位置" rows="2"></textarea>
+                    <div class="weui-textarea-counter"><span class="text-num-position">0</span>/200</div>
                 </div>
             </div>
             <div class="weui-cell weui-cell_switch">
@@ -105,6 +116,7 @@
         var img = []; //创建一个空对象用来保存传入的图片
         var is_anonymous = -1;
         var content = '';
+        var position = '';
         $('#uploaderInput').change(function () {
             var file = this.files;
             if (img.length + file.length > 10) { //判断图片的数量，数量不能超过10张
@@ -134,7 +146,7 @@
             }
         })
         //文本输入
-        $('.weui-textarea').keyup(function () {
+        $('.desc').keyup(function () {
             if (content.length >= 1000) {
                 $.alert("情况描述最多1000个字符");
                 $(this).val(content);
@@ -142,11 +154,20 @@
             content = $(this).val();
             $('.text-num').html(content.length)
         })
+        $('.position').keyup(function () {
+            if (position.length >= 1000) {
+                $.alert("隐患具体位置最多200个字符");
+                $(this).val(position);
+            }
+            position = $(this).val();
+            $('.text-num-position').html(position.length)
+        })
         //提交
         $('.weui-btn').click(function () {
             $.showLoading("数据提交中");
             var category = $('.weui-select').val();
             var mobile = $('input[name="mobile"]').val();
+            var time = $('input[name="time"]').val();
             var formdata = new FormData();
             for (var i = 0; i < img.length; i++) {
                 formdata.append('files[]', img[i]);
@@ -155,6 +176,9 @@
             formdata.append('content', content);
             formdata.append('category_id', category);
             formdata.append('mobile', mobile);
+            formdata.append('time', time);
+            formdata.append('position', position);
+
             axios.post('/submit', formdata).then(res => {
                 $.hideLoading();
                 if (res.data.status == 200) {

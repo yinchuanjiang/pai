@@ -16,7 +16,7 @@ class SubmitController extends Controller
 {
     public function index(SubmitRequest $request)
     {
-        $data = $request->all(['files', 'category_id', 'is_anonymous', 'content','mobile']);
+        $data = $request->all(['files', 'category_id', 'is_anonymous', 'content','mobile','time','position']);
         $files = $data['files'];
         unset($data['files']);
         $images = [];

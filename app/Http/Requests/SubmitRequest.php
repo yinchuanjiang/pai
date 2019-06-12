@@ -33,7 +33,9 @@ class SubmitRequest extends FormRequest
                     'category_id' => 'required',
                     'is_anonymous' => 'required|in:1,-1',
                     'mobile' => 'required|max:11|min:11',
-                    'content' => 'required|max:1000'
+                    'content' => 'required|max:1000',
+                    'position' => 'required|max:200',
+                    'time' => 'required|date'
                 ];
             }
             case 'PUT':
@@ -57,6 +59,10 @@ class SubmitRequest extends FormRequest
             'mobile.min' => '手机号格式不正确',
             'content.required' => '情况描述不能为空',
             'content.max' => '情况描述最多为1000个字符',
+            'position.required' => '隐患具体位置不能为空',
+            'position.max' => '隐患具体位置最多为200个字符',
+            'time.required' => '拍摄时间不能为空',
+            'time.data' => '拍摄时间格式错误'
         ];
     }
 }

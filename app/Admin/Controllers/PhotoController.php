@@ -115,6 +115,8 @@ class PhotoController extends Controller
             }
             return "<span class='label {$color}'>".$type."</span>";
         });
+        $grid->time('拍摄时间');
+        $grid->position('隐患具体位置');
         $grid->content('描述');
         $grid->remark('备注')->editable();
         $grid->created_at('提交时间');
