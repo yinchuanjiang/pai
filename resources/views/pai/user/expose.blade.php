@@ -36,6 +36,7 @@
                                             <span class="title_cate">{{$all->category->cate_name}}</span>
                                         </p>
                                         <p class="title_time">提交时间:{{$all->created_at}}</p>
+                                        <p class="title_time">拍摄时间:{{$all->time}}</p>
                                     </div>
                                     <div class="photo-lists">
                                         @foreach($all->images as $image)
@@ -43,6 +44,7 @@
                                         @endforeach
                                     </div>
                                     <p class="tips">{{$all->content}}</p>
+                                    <p class="tips" style="color: red">具体位置：{{$all->position}}</p>
                                     @if($all->status == \App\Models\Enum\PhotoEnum::CHECKED_REFUSE)
                                         <p class="remark">备注：{{$refus->remark}}</p>
                                     @endif
