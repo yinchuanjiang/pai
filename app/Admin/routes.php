@@ -12,7 +12,7 @@ Route::group([
 
     //$router->get('/', 'HomeController@index')->name('admin.home');
     $router->get('/',function (){
-        redirect('/admin/banners');
+        redirect('/admin/photos');
     });
     $router->resource('category', CategoryController::class);
     $router->resource('photos', PhotoController::class);
