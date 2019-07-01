@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class IndexController extends Controller
 {
 
-    //h5活动首页
+    //首页
     public function index()
     {
         $appid = config('app.wx_appid');

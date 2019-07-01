@@ -23,7 +23,7 @@ class Controller extends BaseController
         view()->composer('layout.main',function ($view) use ($signPackage){
             $view->with('signPackage',$signPackage);
         });
-//        Auth::guard('web')->loginUsingId(2);
+        Auth::guard('web')->loginUsingId(2);
     }
 
 
