@@ -81,6 +81,7 @@
         .photo-lists {
             width: 80%;
             margin-top: 10px;
+            margin-left: 50px;
             float: left;
         }
         .photo-lists img {
