@@ -67,13 +67,15 @@ class Controller extends BaseController
 
     private function getJsApiTicket()
     {
-        $appid = config('app.wx_appid');
-        $appsecret = config('app.wx_secret');
-        $accessToken = \GuzzleHttp\json_decode($this->httpGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$appid&secret=$appsecret"),true);
-        $accessToken = $accessToken['access_token'];
-        dd($accessToken);
-        $expiresAt = now()->addMinutes(110);
-        Cache::put('access_token', $accessToken, $expiresAt);
+        $accessToken = Cache::get('access_token');
+        if(!$accessToken) {
+            $appid = config('app.wx_appid');
+            $appsecret = config('app.wx_secret');
+            $accessToken = \GuzzleHttp\json_decode($this->httpGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$appid&secret=$appsecret"), true);
+            $accessToken = $accessToken['access_token'];
+            $expiresAt = now()->addMinutes(110);
+            Cache::put('access_token', $accessToken, $expiresAt);
+        }
         // 如果是企业号用以下 URL 获取 ticket
         //$url = "https://qyapi.weixin.qq.com/cgi-bin/get_jsapi_ticket?access_token=$accessToken";
         $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=$accessToken";
