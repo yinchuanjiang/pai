@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Enum\PhotoEnum;
 use App\Models\Photo;
-use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
     //首页
     public function index()

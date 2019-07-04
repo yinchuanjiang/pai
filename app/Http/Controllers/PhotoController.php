@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 
-class PhotoController extends Controller
+class PhotoController extends BaseController
 {
     public function index()
     {

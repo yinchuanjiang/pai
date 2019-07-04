@@ -7,7 +7,7 @@ use App\Models\Photo;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class UserController extends BaseController
 {
     //个人中心页面
     public function index()

@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
 
     //首页

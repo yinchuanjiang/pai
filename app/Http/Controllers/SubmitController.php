@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class SubmitController extends Controller
+class SubmitController extends BaseController
 {
     public function index(SubmitRequest $request)
     {
